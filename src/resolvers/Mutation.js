@@ -55,7 +55,7 @@ const Mutation = {
 
     db.posts.push(post);
 
-    pubsub.publish("posts", { post: { post: post, mutation: "CREATE POST" } });
+    pubsub.publish("posts", { post: { post: post, mutation: "CREATED" } });
 
     return post;
   },
@@ -93,7 +93,7 @@ const Mutation = {
     db.comments = comments;
 
     pubsub.publish("posts", {
-      post: { post: deletedPost[0], mutation: "DELETE POST" }
+      post: { post: deletedPost[0], mutation: "DELETED" }
     });
 
     return deletedPost[0];
@@ -160,7 +160,7 @@ const Mutation = {
       post.published = data.published;
     }
 
-    pubsub.publish("posts", { post: { post, mutation: "UPDATE POST" } });
+    pubsub.publish("posts", { post: { post, mutation: "UPDATED" } });
 
     return post;
   },
