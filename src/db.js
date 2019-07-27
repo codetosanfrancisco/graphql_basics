@@ -70,4 +70,4 @@ const db = {
   posts
 };
 
-export default db;
+export { db as default };
