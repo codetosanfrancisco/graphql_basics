@@ -1,0 +1,4 @@
+#Reviews is the service (project name basically), and default is stage name (which could be development, test)
+#Same Prisma server, same database, but different database segment segmented using project name (service)
+endpoint: http://localhost:4466/reviews/default
+datamodel: datamodel.prisma
